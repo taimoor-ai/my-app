@@ -32,10 +32,10 @@ export default function NavBar({
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={mode}>
             <li className="nav-item">
-             <h4>Home</h4>
+             <h4 className="mx-3">Home</h4>
             </li>
             <li className="nav-item">
-            <h4>aboutText</h4>
+            <h4 className="mx-3">{aboutText}</h4>
             </li>
           </ul>
           <form className="d-flex mx-4" role="search">
