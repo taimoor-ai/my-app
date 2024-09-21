@@ -32,19 +32,10 @@ export default function NavBar({
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={mode}>
             <li className="nav-item">
-              <a
-                className="nav-link active"
-                aria-current="page"
-                href="#"
-                style={mode}
-              >
-                Home
-              </a>
+             <h4>Home</h4>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" style={mode}>
-                {aboutText}
-              </a>
+            <h4>aboutText</h4>
             </li>
           </ul>
           <form className="d-flex mx-4" role="search">
