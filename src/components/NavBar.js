@@ -35,14 +35,14 @@ export default function NavBar({
               <a
                 className="nav-link active"
                 aria-current="page"
-                href="/"
+                href="#"
                 style={mode}
               >
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/" style={mode}>
+              <a className="nav-link" href="#" style={mode}>
                 {aboutText}
               </a>
             </li>
