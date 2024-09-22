@@ -3,13 +3,12 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Textform from "./components/TextForm.js";
 import Alert from "./components/Alert.js";
-// import About from "./components/About.js";
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import About from "./components/About.js";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 const dark = {
   theme: "dark",
   backgroundColor: "black",
@@ -56,23 +55,24 @@ function App1() {
 
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <NavBar title="textUtils2" mode={Mode} toggleFunction={toggle} />
       
         <div className="container">
-          {/* {<Routes>
-            <Route path="/about" element={<About   mode={Mode}/>} />
-            <Route */}
-              {/* // path="/"
-              // element={ */}
-              {/* //   <> */}
+          <Routes>
+            <Route path="/about" element={<About   mode={Mode}/>}/>
+            <Route
+               path="/"
+               element={
+                <>
                    <Alert alertDetail={alert} /> 
                   <Textform heading="TextUtils" Alert={showAlert} mode={Mode}/>
-                {/* </>  */}
-            {/* />
-          </Routes>} */}
+                </>
+               }/>
+          
+          </Routes>
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }

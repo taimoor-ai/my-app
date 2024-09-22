@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function NavBar({
   title = "default",
@@ -10,7 +10,7 @@ export default function NavBar({
 ) {
   return (
     <nav className="navbar navbar-expand-lg px-2" style={mode}>
-        <img src='favicon-32x32.png' className="mx-2" alt='icon'/>
+        <img src='favicon-16x16.png' className="mx-2" alt='icon'/>
         <h2>{title}</h2>
       <div className="container-fluid" style={mode}>
         <button
@@ -32,10 +32,12 @@ export default function NavBar({
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={mode}>
             <li className="nav-item">
-             <h4 className="mx-3">Home</h4>
+             {/* <h4 className="mx-3">Home</h4> */}
+             <Link to='/'className="btn btn-primary mx-3 my-3">Home</Link>
             </li>
             <li className="nav-item">
-            <h4 className="mx-3">{aboutText}</h4>
+            {/* <h4 className="mx-3 m" >{aboutText}</h4> */}
+            <Link to='/about'className="btn btn-primary mx-3 my-3">{aboutText}</Link>
             </li>
           </ul>
           <form className="d-flex mx-4" role="search">
