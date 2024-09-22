@@ -60,7 +60,6 @@ function App1() {
       
         <div className="container">
           <Routes>
-            <Route path="/about" element={<About   mode={Mode}/>}/>
             <Route
                path="/"
                element={
@@ -69,6 +68,8 @@ function App1() {
                   <Textform heading="TextUtils" Alert={showAlert} mode={Mode}/>
                 </>
                }/>
+            <Route path="/about" element={<About   mode={Mode}/>}/>
+           
           
           </Routes>
         </div>
