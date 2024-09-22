@@ -8,8 +8,11 @@ export default function Alert({alertDetail}) {
     
  }
   return (
-    alertDetail.type && <div className={`alert alert-${alertDetail.type} alert-dismissible fade show my-3`} role="alert">
+     <div className="container my-2"style={{height:'50px',display:'flex',alignItems:'center',justifyContent:'center'}}>
+      {alertDetail.type && <div style={{width:'80%'}}className={`alert alert-${alertDetail.type} alert-dismissible fade show my-3`} role="alert">
       <strong>{capitalize(alertDetail.type)}!</strong>{alertDetail.msg} 
-    </div>
+    </div>}
+     </div>
+    
   );
 }

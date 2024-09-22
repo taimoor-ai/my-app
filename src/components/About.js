@@ -1,17 +1,25 @@
 import React from 'react';
 import './about.css';
 const darkStyle={
-  backgroundColor:'rgb(3, 39, 69)',
+  backgroundColor:'rgb(29 120 196)',
   color:'white'
 }
 const lightStyle={
   backgroundColor:'white',
   color:'black'
 }
+const itemStyleDark={
+  backgroundColor:'#153967',
+  color:'white'
+}
+const itemStylelight={
+  backgroundColor:'white',
+  color:'black'
+}
 export default function About({mode={ backgroundColor: "white", color: "black",theme:'light',display:'enable DarkMode'}}) {
   return (
     <div className="accordion my-3" id="accordionExample">
-    <div className="accordion-item" style={mode}>
+    <div className="accordion-item" style={mode.theme==='light'?itemStylelight:itemStyleDark}>
       <h2 className="accordion-header" id="headingOne">
         <button className="accordion-button"style={mode.theme==='light'?lightStyle:darkStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           Accordion Item #1
@@ -23,7 +31,7 @@ export default function About({mode={ backgroundColor: "white", color: "black",t
         </div>
       </div>
     </div>
-    <div className="accordion-item"style={mode}>
+    <div className="accordion-item"style={mode.theme==='light'?itemStylelight:itemStyleDark}>
       <h2 className="accordion-header" id="headingTwo">
         <button style={mode.theme==='light'?lightStyle:darkStyle}className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           Accordion Item #2
@@ -35,7 +43,7 @@ export default function About({mode={ backgroundColor: "white", color: "black",t
         </div>
       </div>
     </div>
-    <div className="accordion-item"style={mode}>
+    <div className="accordion-item"style={mode.theme==='light'?itemStylelight:itemStyleDark}>
       <h2 className="accordion-header" id="headingThree">
         <button style={mode.theme==='light'?lightStyle:darkStyle} className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
           Accordion Item #3

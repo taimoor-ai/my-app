@@ -6,6 +6,16 @@
   height: 40vmin;
   pointer-events: none;
 }
+/* Default placeholder style */
+textarea::placeholder {
+  color: black; /* Change this for light mode if needed */
+}
+
+/* Dark mode placeholder style */
+.dark-placeholder::placeholder {
+  color: white; /* Change this for dark mode */
+  opacity: 1; /* Optional: Set opacity */
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

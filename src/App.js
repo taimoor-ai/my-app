@@ -57,15 +57,14 @@ function App1() {
     <>
       <Router>
         <NavBar title="textUtils2" mode={Mode} toggleFunction={toggle} />
-      
+        <Alert alertDetail={alert} /> 
         <div className="container">
           <Routes>
             <Route
                path="/"
                element={
                 <>
-                   <Alert alertDetail={alert} /> 
-                  <Textform heading="TextUtils" Alert={showAlert} mode={Mode}/>
+                  <Textform heading="Try TextUtils -Word Counter, Character Counter, Remove extra spaces" Alert={showAlert} mode={Mode}/>
                 </>
                }/>
             <Route path="/about" element={<About   mode={Mode}/>}/>

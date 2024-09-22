@@ -123,16 +123,16 @@ export default function TextForm({ heading = "i am heading",Alert,mode={theme:'l
         <h1>{heading}</h1>
         <textarea
           placeholder="Enter or paste text here"
-          className="form-control"
+          className={`form-control ${mode.theme==='dark'?'dark-placeholder':''}`} 
           onChange={handleonclick}
           onPaste={handlePaste}
           id="myBox"
           rows="8"
           value={text}
-          style={mode.theme==='light'?{backgroundColor:'white',color:'black'}:{backgroundColor:'transparent',color:'white'}}
+          style={mode.theme==='light'?{backgroundColor:'white',color:'black',caretColor:'red'}:{backgroundColor:'rgb(17 98 166)',color:'white',caretColor:'red'}}
         ></textarea>
       </div>
-      <button className="btn btn-primary my-2 mx-2" onClick={uppHandleClick}>
+      <button className="btn btn-primary my-2 mx-2" disabled={text.length===0}onClick={uppHandleClick}>
         ToUppercase
       </button>
       <button className="btn btn-primary my-2 mx-2" onClick={lowerHandleClick}>
@@ -162,7 +162,9 @@ export default function TextForm({ heading = "i am heading",Alert,mode={theme:'l
           words and <strong>{text.length}</strong> characters
         </p>
         <p>
-          read in <strong>{text.split(" ").length * 0.008}</strong> minutes
+          read in <strong>{(text.endsWith(" ") || text.length === 0
+              ? text.split(" ").length - 1
+              : text.split(" ").length) * 0.008}</strong> minutes
         </p>
         <h2>
           Preview{" "}
@@ -172,7 +174,7 @@ export default function TextForm({ heading = "i am heading",Alert,mode={theme:'l
           ></i>
         </h2>
 
-        <p>{text.length>0?text:'please write something in the textArea above to previewHere'}</p>
+        <p>{text.length>0?text:'Nothing To Preview'}</p>
       </div>
       <h2>Email founds</h2>
       <ul className="list-group" ref={listRef}></ul>
